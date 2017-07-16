@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <title>Simple digit recognition app</title>
+  <meta name="description" content="">
+  <meta name="author" content="Gabrijel Boduljak">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <link rel="stylesheet" href="css/app.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.14.2/math.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns" style="margin-top: 10%">
+        <h1>Handwriting digit recognizer</h1>
+        <p>A simple feed forward neural network implementation for predicting handwritten digits.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="twelve columns">
+        <h5>Draw digit inside!</h4>
+          <canvas id="digitCanvas" class="center" width="128" height="128" style="border:2px solid black"></canvas>
+          <canvas id="scaledCanvas" style="display: none;"></canvas>
+
+          <button id="recognize" class="button-primary"> Recognize</button>
+          <button id="clear">Try another</button>
+      </div>
+
+      <div class="row">
+        <div class="twelve columns">
+          <h5>Recognition results</h4>
+          <h4 id="recognizedDigit"></p>
+          <br>
+          <canvas id="resultsChart" class="center" width="800" height="400"></canvas>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  </div>
+  <script type="text/javascript" src="/scripts/hiddenLayerWeights.js"></script>
+  <script type="text/javascript" src="/scripts/outputLayerWeights.js"></script>
+  <script type="text/javascript" src="/scripts/neuralNetwork.js"></script>
+  <script type="text/javascript" src="/scripts/canvas.js"></script>
+  <script type="text/javascript" src="/scripts/chart.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+</body>
+
+</html>

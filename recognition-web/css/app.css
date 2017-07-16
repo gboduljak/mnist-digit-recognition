@@ -1,0 +1,16 @@
+button {
+    margin:0 auto;
+    display:block;
+    width: 256px;
+    margin-top:10px;
+}
+.center
+{
+    margin:0 auto;
+    display:block;
+}
+.resultsChart
+{
+    max-height: 400;
+    max-width: 800;
+}
