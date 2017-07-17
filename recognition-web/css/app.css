@@ -8,9 +8,10 @@ button {
 {
     margin:0 auto;
     display:block;
+    text-align: center;
 }
 .resultsChart
 {
-    max-height: 400;
-    max-width: 800;
+    height: 400;
+    width: 800;
 }

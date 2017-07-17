@@ -1,8 +1,7 @@
 function NeuralNetwork(){
     this.activate = function sigmoid(x) {
         return 1 / (1 + Math.exp(-x));
-    }
-
+    };
     this.hiddenLayerWeights = math.matrix(window.hiddenLayerWeights);
     this.outputLayerWeights = math.matrix(window.outputLayerWeights);
 }

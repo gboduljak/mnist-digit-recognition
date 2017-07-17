@@ -1,31 +1,22 @@
-var chartContext = document.getElementById("resultsChart").getContext('2d');
-
-var currentChart = undefined;
-
-function setChartData(networkOutput) {
-    if(!!currentChart)
-        currentChart.destroy();
-
-    currentChart = renderChart(networkOutput);
-}
-
-function renderChart(networkOutput) {
-    return new Chart(chartContext, {
+function ChartRenderer() {
+    this.chartContext = document.getElementById("resultsChart").getContext('2d');
+    this.chartInstance = new Chart(  this.chartContext, {
         type: 'bar',
         data: {
-            labels: ["0", "1", "2", "3", "4", "5", "6", '7', '8', '9'],
+            labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
             datasets: [{
-                label: 'confidence for each digit',
-                data: networkOutput,
+                label: 'match rate',
+                data: [],
                 borderWidth: 1
             }]
         },
         options: {
-               responsive: false,
+            responsive: true,
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        max: 1.0
                     }
                 }]
             },
@@ -35,8 +26,22 @@ function renderChart(networkOutput) {
             },
             title: {
                 display: true,
-                text: 'Neural Network outputs'
+                text: 'match rates for digits'
             }
         }
     });
+}
+
+ChartRenderer.prototype.update = function (networkOutput) {
+    let defaultColors = '0'
+        .repeat(10)
+        .split('')
+        .map(_ => 'rgba(148,159,177,0.2)');
+
+    let maxIndex = networkOutput.indexOf(Math.max(...networkOutput));
+
+    this.chartInstance.data.datasets[0].backgroundColor = defaultColors;
+    this.chartInstance.data.datasets[0].backgroundColor[maxIndex] = 'rgba(51, 195, 240, 0.8)';
+    this.chartInstance.data.datasets[0].data = networkOutput;
+    this.chartInstance.update();
 }
