@@ -1,9 +1,9 @@
 function ChartRenderer() {
-    this.chartContext = document.getElementById("resultsChart").getContext('2d');
-    this.chartInstance = new Chart(  this.chartContext, {
+    this.chartContext  = document.getElementById('resultsChart').getContext('2d');
+    this.chartInstance = new Chart(this.chartContext, {
         type: 'bar',
         data: {
-            labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
+            labels: ['zero','one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'],
             datasets: [{
                 label: 'match rate',
                 data: [],
@@ -33,15 +33,17 @@ function ChartRenderer() {
 }
 
 ChartRenderer.prototype.update = function (networkOutput) {
-    let defaultColors = '0'
+    const defaultColors = '0'
         .repeat(10)
         .split('')
         .map(_ => 'rgba(148,159,177,0.2)');
 
-    let maxIndex = networkOutput.indexOf(Math.max(...networkOutput));
+    const resultColor = 'rgba(51, 195, 240, 0.8)';
 
-    this.chartInstance.data.datasets[0].backgroundColor = defaultColors;
-    this.chartInstance.data.datasets[0].backgroundColor[maxIndex] = 'rgba(51, 195, 240, 0.8)';
-    this.chartInstance.data.datasets[0].data = networkOutput;
+    let recognitionResultIndex = networkOutput.indexOf(Math.max(...networkOutput));
+
+    this.chartInstance.data.datasets[0].backgroundColor                         = defaultColors;
+    this.chartInstance.data.datasets[0].backgroundColor[recognitionResultIndex] = resultColor;
+    this.chartInstance.data.datasets[0].data                                    = networkOutput;
     this.chartInstance.update();
 }

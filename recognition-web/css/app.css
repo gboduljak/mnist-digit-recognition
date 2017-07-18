@@ -10,8 +10,14 @@ button {
     display:block;
     text-align: center;
 }
-.resultsChart
+#resultsChart
 {
-    height: 400;
-    width: 800;
+    margin:0 auto;
+    display:block;
+    max-height: 300;
+    max-width: 600;
+}
+#recognizedDigit {
+    color:#33C3F0;
+    text-align: center;
 }

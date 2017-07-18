@@ -6,8 +6,8 @@ function NeuralNetwork(){
     this.outputLayerWeights = math.matrix(window.outputLayerWeights);
 }
 
-NeuralNetwork.prototype.query = function(input_array){
-    inputs = math.matrix(input_array);
+NeuralNetwork.prototype.query = function(inputImageStream){
+    inputs = math.matrix(inputImageStream);
 
     hiddenLayerInputs = math.multiply(inputs, math.transpose(this.hiddenLayerWeights));
     hiddenLayerOutputs = hiddenLayerInputs.map(x => this.activate(x));
