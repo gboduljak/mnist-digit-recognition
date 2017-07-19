@@ -12,4 +12,4 @@ Training and testing was done in Phyton with Anaconda package.
 
 ## Prediction screenschot
 
-[prediction-result]: https://github.com/gboduljak/mnist-digit-recognition/readme-resources/prediction-result.png "Prediction Result"
+[prediction-result]: https://github.com/gboduljak/mnist-digit-recognition/blob/master/readme-resources/prediction-result.png "Prediction Result"
