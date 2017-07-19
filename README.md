@@ -1,4 +1,4 @@
-# mnist-digit-recognition
+# MNIST digit recognition problem
 A simple feed forward neural network implementation for predicting handwritten digits.
 
 The model is comprised of three neural layers:
@@ -12,4 +12,4 @@ Training and testing was done in Phyton with Anaconda package.
 
 ## Prediction screenschot
 
-[prediction-result]: https://github.com/gboduljak/mnist-digit-recognition/blob/master/readme-resources/prediction-result.png "Prediction Result"
+[prediction-result]: https://raw.githubusercontent.com/gboduljak/mnist-digit-recognition/master/readme-resources/prediction-result.png "Prediction Result"
