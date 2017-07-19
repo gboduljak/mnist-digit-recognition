@@ -10,6 +10,5 @@ The activation function is **sigmoid**.
 
 Training and testing was done in Phyton with Anaconda package.
 
-## Prediction screenschot
-
+## Prediction screenshot
 <img src="readme-resources/prediction-result.png" alt="Prediction result" /> 
