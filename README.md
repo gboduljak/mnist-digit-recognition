@@ -1,4 +1,4 @@
-# MNIST digit recognition problem
+# MNIST digit recognition
 A simple feed forward neural network implementation for predicting handwritten digits.
 
 The model is comprised of three neural layers:
@@ -8,7 +8,7 @@ The model is comprised of three neural layers:
 
 The activation function is **sigmoid**.
 
-Training and testing was done in Phyton with Anaconda package.
+Training and testing was done in Python with Anaconda package.
 
 ## Prediction screenshot
 <img src="readme-resources/prediction-result.png" alt="Prediction result" /> 
